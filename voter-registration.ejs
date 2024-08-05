@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create An Account</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="parentDiv">
+        <h2>Create An Account</h2>
+        <form id="userLogin" method="post" action="/voter-registration">
+            <span id="userInfo" >
+               
+                <input type="text" id="fName" name="firstName" placeholder="first Name:" required>
+                <input type="text" id="mName" name="middleName" placeholder="middle Name:" required>
+                <input type="text" id="lName" name="lastName" placeholder="last Name:" required>
+                <input type="text" id="uName" name="userName" placeholder="userName:" required>
+                <input type="date" id="dob" name="bDay" placeholder="Date Of Birth" required>
+                <small id="passwordWarning" class="weak-password"></small>
+                <input type="file" id="photo" name="photo" placeholder="photo" required>
+                <div class="password-container">
+                    <input type="password" id="userPassword" name="password" placeholder="Password:" required>
+                </div>
+            </span>
+            <div id="userOption">
+                <button type="submit" id="submit">Create An Account</button>
+                <p>Already Have An Account? <a href="./index2.html">Sign In</a></p>
+            </div>
+        </form>
+    </div>
+    <script src="signUp.js"></script>
+</body>
+</html>
