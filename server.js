@@ -11,6 +11,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs'); // Set the view engine to EJS
+app.set('views', path.join(__dirname, 'views')); // Set the views directory
 
 // Create table if it doesn't exist
 db.serialize(() => {
@@ -25,7 +26,7 @@ db.serialize(() => {
 
 // Routes
 app.get('/voter-registration', (req, res) => {
-    res.render('voter-registration.ejs');
+    res.render('voter-registration');
 });
 
 app.post('/voter-registration', (req, res) => {
@@ -41,16 +42,13 @@ app.post('/voter-registration', (req, res) => {
     });
 });
 
-// Serve static files from the "public" directory
-app.use(express.static(path.join(__dirname, 'public')));
-
 // Routes
 app.get('/', (req, res) => {
-    res.render('index'); // Render the index.ejs template
+    res.render('index');
 });
 
 app.get('/home', (req, res) => {
-    res.render('index'); // Render the index.ejs template
+    res.render('index');
 });
 
 // Start the server
